@@ -10,4 +10,4 @@ cd  nginx-0.9.4
     --lock-path=/var/lib/nginx/run \
     --with-http_ssl_module
 make install
-    
+

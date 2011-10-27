@@ -21,7 +21,7 @@ DirectoryIndex index.html index.php
 <Directory "/var/www/sites/eccube-2.4.3/html">
     AllowOverride All
     Options +FollowSymLinks
-    
+
     AuthUserFile /var/www/etc/htpasswd
     AuthGroupFile /dev/null
     AuthType Basic
@@ -33,7 +33,7 @@ EOF
 
 cd /var/www/sites/
 wget http://downloads.ec-cube.net/src/eccube-2.4.3.tar.gz
-tar xvzf eccube-2.4.3.tar.gz 
+tar xvzf eccube-2.4.3.tar.gz
 chmod 777 eccube-2.4.3/html/install/temp
 
 # global ipの取得

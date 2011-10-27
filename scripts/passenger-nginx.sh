@@ -6,7 +6,7 @@ gem install passenger
 cd /usr/src
 wget http://nginx.org/download/nginx-0.9.4.tar.gz
 tar xvzf nginx-0.9.4.tar.gz
-sudo /usr/sbin/adduser nginx -d /var/lib/nginx -s /sbin/nologin 
+sudo /usr/sbin/adduser nginx -d /var/lib/nginx -s /sbin/nologin
 
 ./configure \
     --user=nginx \
@@ -34,5 +34,5 @@ EOF
 chmod +x /var/lib/nginx/run
 
 
-  
+
 

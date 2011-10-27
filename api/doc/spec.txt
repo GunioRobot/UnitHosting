@@ -7,7 +7,7 @@ UnitHosting API仕様書 ver 1.2
 
  このドキュメントは、株式会社ディノが提供する、*ユニットホスティング*サービスのWebサービスAPI(以下、UHAPIと記述)の実装ガイドです。UHAPIでは以下のAPIサービスを提供します。
 
- 
+
 ### サーバAPIサービス
 
 単一のサーバインスタンスの制御を行います。サーバAPIを利用するためには、サーバのインスタンスIDと有効なAPIキーを入手する必要があります。
@@ -40,7 +40,7 @@ XML-RPCエンドポイント
 現在のサーバのステータスを返します。
 
 #### 引数
- 
+
  * string instance_id : サーバのインスタンスID
  * string api_key     : サーバのAPIキー
 
@@ -48,7 +48,7 @@ XML-RPCエンドポイント
 
  * running : 動作中
  * halted  : 停止中
- 
+
 ### vm.start
 
 #### 説明
@@ -56,14 +56,14 @@ XML-RPCエンドポイント
   停止しているサーバを起動します。
 
 #### 引数
- 
+
  * string instance_id : サーバのインスタンスID
  * string api_key     : サーバのAPIキー
 
 #### 戻り値
 
  * string result : 実行結果(成功なら success)
- 
+
 ### vm.shutdown
 
 #### 説明
@@ -71,14 +71,14 @@ XML-RPCエンドポイント
   起動しているサーバをシャットダウン（ソフトシャットダウン)します。
 
 #### 引数
- 
+
  * string instance_id : サーバのインスタンスID
  * string api_key     : サーバのAPIキー
 
 #### 戻り値
- 
+
  * string result : 実行結果(成功なら success)
- 
+
 ### vm.powerOff
 
 #### 説明
@@ -86,14 +86,14 @@ XML-RPCエンドポイント
   起動しているサーバをシャットダウン（ハードシャットダウン)します。vm.powerOff(ハードシャットダウン)はなるべくせずに可能な限りvm.shutdown(ソフトシャットダウン)を利用してください。
 
 #### 引数
- 
+
  * string instance_id : サーバのインスタンスID
  * string api_key     : サーバのAPIキー
 
 #### 戻り値
 
  * string result : 実行結果(成功なら success)
- 
+
 ### vm.reboot
 
 #### 説明
@@ -101,14 +101,14 @@ XML-RPCエンドポイント
   起動しているサーバを再起動します。メモリ・CPUコア・ディスクの変更があれば反映します。
 
 #### 引数
- 
+
  * string instance_id : サーバのインスタンスID
  * string api_key     : サーバのAPIキー
 
 #### 戻り値
- 
+
  * string result : 実行結果(成功なら success)
- 
+
 ### vm.destroy
 
 #### 説明
@@ -116,7 +116,7 @@ XML-RPCエンドポイント
 サーバを削除します。削除は停止(halted)時にしか行えません。
 
 #### 引数
- 
+
  * string instance_id : サーバのインスタンスID
  * string api_key     : サーバのAPIキー
 
@@ -127,21 +127,21 @@ XML-RPCエンドポイント
 ### vm.renew
 
 #### 引数
- 
+
  * string display_name : 表示名
  * string rootpw       : rootパスワード
  * string ssh_key      : sshのキー
  * string user_script  : ユーザスクリプトURI
 
 以下の引数はオプションです:
-  
+
  * string op_user      : user名(ユーザスクリプト内で利用)
  * string op_mail      : メールアドレス(ユーザスクリプト内で利用)
 
 #### 戻り値
 
  * string result : 実行結果(成功なら success)
- 
+
 #### 説明
 
  サーバの初期化。初期化は停止(halted)時にしか行えません。
@@ -152,7 +152,7 @@ XML-RPCエンドポイント
 
  * string instance_id : サーバのインスタンスID
  * string api_key     : サーバのAPIキー
- 
+
 #### 戻り値
 
  * array
@@ -162,7 +162,7 @@ XML-RPCエンドポイント
 #### 説明
 
  サーバに割り当てられているIPドレスについての情報を返します。
- 
+
 
 ### vm.getMemoryUnitSize
 
@@ -189,7 +189,7 @@ XML-RPCエンドポイント
  * string instance_id : サーバのインスタンスID
  * string api_key     : サーバのAPIキー
  * integer size        : セットする追加メモリサイズ
- 
+
 #### 戻り値
 
  * string result : 実行結果(成功なら success)
@@ -226,7 +226,7 @@ XML-RPCエンドポイント
  * string instance_id : サーバのインスタンスID
  * string api_key     : サーバのAPIキー
  * integer num        : セットする追加CPUのコア数
- 
+
 #### 戻り値
 
  * string result : 実行結果(成功なら success)
@@ -245,7 +245,7 @@ XML-RPCエンドポイント
  * string instance_id : サーバのインスタンスID
  * string api_key     : サーバのAPIキー
  * string display_name : 表示名
- 
+
 #### 戻り値
 
  * string instance_id : サーバのインスタンスID
@@ -266,7 +266,7 @@ XML-RPCエンドポイント
 
  * string instance_id : サーバグループのインスタンスID
  * string api_key     : サーバグループのAPIキー
- 
+
 #### 戻り値
 
  * array
@@ -283,38 +283,38 @@ XML-RPCエンドポイント
 
  * string instance_id : サーバグループのインスタンスID
  * string api_key     : サーバグループのAPIキー
- 
+
  * string display_name : 表示名
  * string rootpw       : rootパスワード
  * string ssh_key      : sshのキー
  * string user_script  : ユーザスクリプトURI
 
 以下の引数はオプションです:
-  
+
  * string op_user      : user名(ユーザスクリプト内で利用)
  * string op_mail      : メールアドレス(ユーザスクリプト内で利用)
 
  * string plan_id      : プランID
- 
+
  * string instance_id : サーバグループのインスタンスID
 
 #### 戻り値
 
  * string instance_id : サーバのインスタンスID
  * string result : 実行結果(成功なら success)
- 
+
 #### 引数
 
  * string instance_id : サーバグループのインスタンスID
  * string api_key     : サーバグループのAPIキー
- 
+
 #### 戻り値
 
  * integer id : plan_id
  * string name : プラン名
  * string cycle :　課金サイクル(hourly,monthly)
  * float  point : 課金ポイント(cycle毎)
- 
+
 #### 説明
 
 現在利用可能なプランの一覧を取得します。
@@ -344,7 +344,7 @@ Ruby,PHP,Python,Perlの各言語によるスケールアップのサンプルプ
 
  * 1.0 APIマニュアル初版公開
  * 1.1 `vm.getIpInfo`の追加
- 
+
 
 
 

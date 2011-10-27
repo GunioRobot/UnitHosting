@@ -41,7 +41,7 @@ cat <<EOF > /etc/httpd/site.d/openpne.conf
 <Directory "/var/www/sites/OpenPNE3/web">
     AllowOverride All
     Options +FollowSymLinks
-    
+
     AuthUserFile /var/www/etc/htpasswd
     AuthGroupFile /dev/null
     AuthType Basic
@@ -73,7 +73,7 @@ IE:
 http://uhuser@$GLOBAL_IP/
 others:
 http://uhuser:$password@$GLOBAL_IP/
- 
+
 --------------------
 
 I placed the password at /home/uhuser/openpne-password.txt,too.
